@@ -1,0 +1,19 @@
+type Query {
+  userById(_id: ID): User
+  userByType(userType: UserType): [User]
+  users: [User]
+}
+
+type User {
+	_id: ID!
+	name: String!
+	userType: UserType!
+	age: Int!
+	email: String!
+	mobNo: String!
+}
+
+enum UserType {
+	CLIENT
+	FREELANCER
+}

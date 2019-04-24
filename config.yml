@@ -1,0 +1,28 @@
+logging:
+  level: INFO
+  loggers:
+    com.ideacrest.app: DEBUG
+server:
+  applicationConnectors:
+    - type: http
+      port: 9100
+  adminConnectors:
+    - type: http
+      port: 9101
+httpClient:
+  timeout: 10000ms
+  connectionTimeout: 10000ms
+  timeToLive: 1h
+  cookiesEnabled: false
+  maxConnections: 1024
+  maxConnectionsPerRoute: 1024
+  keepAlive: 0ms
+  retries: 0
+zipkin:
+  enabled: true
+  collector: http
+  baseUrl: http://127.0.0.1:9411/
+  serviceHost: 127.0.0.1
+  servicePort: 9100
+  connectTimeout: 10s
+  readTimeout: 60s
